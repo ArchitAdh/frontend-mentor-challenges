@@ -87,7 +87,7 @@ img {
   position: absolute;
   top: -4rem;
   right: -5.55rem;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
