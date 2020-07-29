@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  line-height: 1.5;
+  padding: 10rem 0;
+  font-size: 0.8125rem;
+}
+
+.container {
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  display: flex;
+  background-color: #fff;
+}
+
+.image {
+  background: url("./image/drawers.jpg") no-repeat center center/cover;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  padding: 2.5rem;
+}
+
+.content__heading {
+  margin-bottom: 1.5rem;
+}
+
+.content__par {
+  margin-bottom: 2rem;
+}
+
+.content__profile {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.content__avatar {
+  display: flex;
+  /* border: 1px solid yellow; */
+}
+
+.avatar {
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 50%;
+}
+
+.content__avatar__info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.content__avatar__info h2 {
+  font-size: 1rem;
+}
+
+.content__icon {
+  background-color: hsl(210, 46%, 95%);
+  padding: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.share {
+  position: absolute;
+  top: -4rem;
+  right: -5.55rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: hsl(217, 19%, 35%);
+  box-shadow: 10px 10px 10px hsl(210, 46%, 95%);
+}
+
+/* arrow head  */
+.share:before {
+  position: absolute;
+  top: 2.8rem;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 15px solid hsl(217, 19%, 35%);
+}
+
+.share > a {
+  font-size: 1.3rem;
+  padding-left: 1em;
+  color: #fff;
+}
+
+.share p {
+  letter-spacing: 3px;
+  color: hsl(212, 23%, 69%);
+}
+
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .content {
+    padding-bottom: 1rem;
+  }
+
+  .content__profile {
+    width: 100%;
+    position: relative;
+  }
+
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+
+  .content__avatar__info h2 {
+    font-size: 0.9rem;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  .share {
+    display: none;
+    justify-content: flex-start;
+    border-radius: 0;
+    top: 0;
+    right: 0;
+    width: calc(100% + 5rem);
+    height: calc(100% + 1rem);
+    /* padding of parent container is 2.5rem in both sides, so to accomodate that width 5 rem is added; similar with height */
+    left: -2.5rem;
+  }
+
+  .share:before {
+    display: none;
+  }
+
+  .content__icon {
+    margin-top: 1rem;
+  }
+}
