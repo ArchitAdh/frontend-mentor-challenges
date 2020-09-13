@@ -91,6 +91,11 @@ body {
         color: #fff;
       }
     }
+
+    &:hover .component__progress div {
+      animation: progress-animation ease-in-out 2s;
+      height: 82%;
+    }
   }
 
   &__progress {
@@ -103,6 +108,15 @@ body {
     align-items: center;
     padding-left: 2px;
 
+    @keyframes progress-animation {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 75%;
+      }
+    }
+
     div {
       width: 75%;
       height: 80%;
@@ -110,14 +124,16 @@ body {
       border-radius: 10px;
       background: $gradient;
       position: relative;
+      animation: progress-animation ease-in-out 2s;
 
       &:after {
         content: "";
         position: absolute;
         width: 12px;
         height: 70%;
-        left: 93%;
-        top: 2px;
+        line-height: 70%;
+        right: 2px;
+        top: 1.5px;
         border-radius: 50%;
         background-color: #fff;
       }
