@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+
+/* utilities  */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+main {
+  background: url("../images/bg-pattern-top-desktop.svg") left top no-repeat, url("../images/bg-pattern-bottom-desktop.svg") right bottom no-repeat;
+}
+
+.page {
+  display: grid;
+  grid-template-areas: "intro ratings" "comments comments";
+  grid-gap: 5rem;
+  padding: 5rem 3rem;
+}
+
+.page .intro {
+  grid-area: intro;
+  max-width: 400px;
+}
+
+.page .intro h1 {
+  color: #502050;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page .intro p {
+  color: #937b92;
+  line-height: 1.5;
+}
+
+.page .ratings {
+  grid-area: ratings;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page .ratings .rating {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  width: 110%;
+  border-radius: 10px;
+  background-color: #f7f2f7;
+  margin: 0.75rem 0;
+  position: relative;
+}
+
+.page .ratings .rating div img {
+  padding: 0.2rem;
+}
+
+.page .ratings .rating p {
+  color: #502050;
+  font-weight: 700;
+}
+
+.page .ratings .rating--review {
+  left: -40px;
+}
+
+.page .ratings .rating--bestTech {
+  left: 40px;
+}
+
+.page .comments {
+  grid-area: comments;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.page .comments .comment {
+  background-color: #502050;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.page .comments .comment .profile {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 1.5rem;
+}
+
+.page .comments .comment .profile img {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  border-radius: 50%;
+}
+
+.page .comments .comment .profile__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.page .comments .comment .profile__text h2 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.page .comments .comment .profile__text p {
+  font-size: 0.9rem;
+  color: #ee68a4;
+}
+
+.page .comments .comment + .comment {
+  margin-left: 2rem;
+}
+
+.page .comments__first {
+  top: -20px;
+}
+
+.page .comments__third {
+  top: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  color: black;
+  font-weight: 700;
+}
+
+footer a {
+  text-decoration: none;
+  color: #502050;
+}
+
+@media (max-width: 576px) {
+  .page {
+    display: grid;
+    grid-template-areas: "intro " "ratings" "comments ";
+    grid-gap: 2rem;
+    text-align: center;
+  }
+  .page .ratings .rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+  }
+  .page .ratings .rating div img {
+    padding: 0.2rem;
+  }
+  .page .ratings .rating p {
+    color: #502050;
+    font-weight: 700;
+  }
+  .page .ratings .rating--review {
+    left: 0;
+  }
+  .page .ratings .rating--bestTech {
+    left: 0;
+  }
+  .page .comments {
+    flex-direction: column;
+    text-align: left;
+  }
+  .page .comments .comment + .comment {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .page .comments__first {
+    top: 0;
+  }
+  .page .comments__third {
+    top: 0;
+  }
+  footer {
+    font-size: 10px;
+  }
+}

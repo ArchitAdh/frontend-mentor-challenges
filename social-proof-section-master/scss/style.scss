@@ -1,0 +1,173 @@
+//VARIABLES
+
+//COLORS
+//primary
+$VeryDarkMagenta: hsl(300, 43%, 22%);
+$SofPink: hsl(333, 80%, 67%);
+//netural
+$DarkGrayishMagenta: hsl(303, 10%, 53%);
+$LightGrayishMagenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+
+//TYPOGRAPHY
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+
+/* utilities  */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+main {
+  background: url("../images/bg-pattern-top-desktop.svg") left top no-repeat,
+    url("../images/bg-pattern-bottom-desktop.svg") right bottom no-repeat;
+}
+
+.page {
+  display: grid;
+  grid-template-areas:
+    "intro ratings"
+    "comments comments";
+  grid-gap: 5rem;
+  padding: 5rem 3rem;
+
+  //intro
+  .intro {
+    grid-area: intro;
+    max-width: 400px;
+
+    h1 {
+      color: $VeryDarkMagenta;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $DarkGrayishMagenta;
+      line-height: 1.5;
+    }
+  }
+
+  //   ratings
+  .ratings {
+    grid-area: ratings;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .rating {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 1rem;
+      width: 110%;
+      border-radius: 10px;
+      background-color: $LightGrayishMagenta;
+      margin: 0.75rem 0;
+      position: relative;
+
+      div img {
+        padding: 0.2rem;
+      }
+
+      p {
+        color: $VeryDarkMagenta;
+        font-weight: 700;
+      }
+
+      &--review {
+        left: -40px;
+      }
+
+      &--bestTech {
+        left: 40px;
+      }
+    }
+  }
+
+  //comments
+  .comments {
+    grid-area: comments;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .comment {
+      background-color: $VeryDarkMagenta;
+      color: $White;
+      padding: 2rem;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 1.5rem;
+
+        img {
+          width: 3rem;
+          height: 3rem;
+          line-height: 3rem;
+          border-radius: 50%;
+        }
+
+        &__text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 1rem;
+
+          h2 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+            color: $SofPink;
+          }
+        }
+      }
+    }
+
+    //any comment that has comment before it
+    .comment + .comment {
+      margin-left: 2rem;
+    }
+
+    &__first {
+      top: -20px;
+    }
+    &__third {
+      top: 20px;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  color: black;
+  font-weight: 700;
+
+  a {
+    text-decoration: none;
+    color: $VeryDarkMagenta;
+  }
+}
+
+@import "mobile";
