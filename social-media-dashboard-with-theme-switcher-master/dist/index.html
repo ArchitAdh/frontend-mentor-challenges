@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Social media dashboard with theme switcher</title>
+  </head>
+  <body class="dark">
+    <main class="dashboard">
+      <div class="container">
+        <section class="intro">
+          <header class="intro__heading">
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: 23,004</p>
+          </header>
+          <div class="intro__toggler">
+            <p>Dark Mode</p>
+            <div class="intro__toggler__button">
+              <input type="checkbox" id="check" class="checkbox" />
+              <label for="check" class="label">
+                <div class="ball"></div>
+              </label>
+            </div>
+          </div>
+        </section>
+        <section class="accounts">
+          <div class="account account--fb">
+            <div class="account__name">
+              <img src="../images/icon-facebook.svg" alt="fb icon" />
+              <span>@architAdh</span>
+            </div>
+            <div class="account__followers">
+              <h2>1987</h2>
+              <p>followers</p>
+            </div>
+            <div class="account__analytic">
+              <img src="../images/icon-up.svg" alt="icon-up" />
+              <span>12 Today</span>
+            </div>
+          </div>
+          <div class="account account--twitter">
+            <div class="account__name">
+              <img src="../images/icon-twitter.svg" alt="twitter icon" />
+              <span>@architAdh</span>
+            </div>
+            <div class="account__followers">
+              <h2>1044</h2>
+              <p>followers</p>
+            </div>
+            <div class="account__analytic">
+              <img src="../images/icon-up.svg" alt="icon-up" />
+              <span>99 Today</span>
+            </div>
+          </div>
+          <div class="account account--insta">
+            <div class="account__name">
+              <img src="../images/icon-instagram.svg" alt="instagram icon" />
+              <span>@architAdh</span>
+            </div>
+            <div class="account__followers">
+              <h2>11k</h2>
+              <p>followers</p>
+            </div>
+            <div class="account__analytic">
+              <img src="../images/icon-up.svg" alt="icon-up" />
+              <span>1099 Today</span>
+            </div>
+          </div>
+          <div class="account account--yt">
+            <div class="account__name">
+              <img src="../images/icon-youtube.svg" alt="youTube icon" />
+              <span>Archit Adh.</span>
+            </div>
+            <div class="account__followers">
+              <h2>8239</h2>
+              <p>Subscribers</p>
+            </div>
+            <div class="account__analytic account__analytic--red">
+              <img src="../images/icon-down.svg" alt="icon-down" />
+              <span>144 Today</span>
+            </div>
+          </div>
+        </section>
+        <section class="overview">
+          <header>
+            <h2>Overview - Today</h2>
+          </header>
+          <div class="overview__grid">
+            <div class="overview__card">
+              <p class="a">Page Views</p>
+              <img src="../images/icon-facebook.svg" alt="fb-icon" class="b" />
+              <p class="c">87</p>
+              <div class="d">
+                <img src="../images/icon-up.svg" alt="icon" />
+                <p>3%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Likes</p>
+              <img src="../images/icon-facebook.svg" alt="fb-icon" class="b" />
+              <p class="c">52</p>
+              <div class="d d--red">
+                <img src="../images/icon-down.svg" alt="icon" />
+                <p>2%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Likes</p>
+              <img
+                src="../images/icon-instagram.svg"
+                alt="insta-icon"
+                class="b"
+              />
+              <p class="c">5462</p>
+              <div class="d">
+                <img src="../images/icon-up.svg" alt="icon" />
+                <p>2257%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Profile Views</p>
+              <img
+                src="../images/icon-instagram.svg"
+                alt="insta-icon"
+                class="b"
+              />
+              <p class="c">52k</p>
+              <div class="d">
+                <img src="../images/icon-up.svg" alt="icon" />
+                <p>1375%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Retweets</p>
+              <img
+                src="../images/icon-twitter.svg"
+                alt="twitter-icon"
+                class="b"
+              />
+              <p class="c">117</p>
+              <div class="d">
+                <img src="../images/icon-up.svg" alt="icon" />
+                <p>303%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Likes</p>
+              <img
+                src="../images/icon-twitter.svg"
+                alt="twitter-icon"
+                class="b"
+              />
+              <p class="c">507</p>
+              <div class="d">
+                <img src="../images/icon-up.svg" alt="icon" />
+                <p>507%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Likes</p>
+              <img
+                src="../images/icon-youtube.svg"
+                alt="youtube-icon"
+                class="b"
+              />
+              <p class="c">107</p>
+              <div class="d d--red">
+                <img src="../images/icon-down.svg" alt="icon" />
+                <p>19%</p>
+              </div>
+            </div>
+            <div class="overview__card">
+              <p class="a">Total Views</p>
+              <img
+                src="../images/icon-youtube.svg"
+                alt="youtube-icon"
+                class="b"
+              />
+              <p class="c">1407</p>
+              <div class="d d--red">
+                <img src="../images/icon-down.svg" alt="icon" />
+                <p>12%</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>Challenge by &nbsp;</p>
+      <a href="https://www.frontendmentor.io/challenges/" target="_blank">
+        Frontend Mentor </a
+      >. &nbsp;
+
+      <p>Coded by &nbsp;</p>
+      <a href="https://github.com/ArchitAdh" target="_blank"> ArchitAdh. </a>.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

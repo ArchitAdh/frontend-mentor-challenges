@@ -1,0 +1,302 @@
+:root {
+  --toggle: #aeb3cb;
+  --bg: white;
+  --topBGPattern: #f5f7ff;
+  --cardBG: #f0f2fa;
+  --leadText: #1e202a;
+  --smallText: rgba(30, 32, 42, 0.8);
+  --hoverText: #cbd2ec;
+  --hoverToggle: linear-gradient(#378fe6, #3eda82);
+}
+
+.dark {
+  --toggle: linear-gradient(#378fe6, #3eda82);
+  --bg: #1e202a;
+  --topBGPattern: #1f212e;
+  --cardBG: #252a41;
+  --leadText: white;
+  --smallText: #8b97c6;
+  --hoverText: #374062;
+  --hoverToggle: #aeb3cb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.dashboard {
+  width: 100%;
+  background: var(--bg);
+  color: var(--leadText);
+  transition: background 500ms ease-in-out, color 1000ms ease;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.intro__heading h1 {
+  font-size: 2rem;
+}
+
+.intro__heading p {
+  color: var(--smallText);
+}
+
+.intro__toggler {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro__toggler p {
+  color: var(--smallText);
+  margin-right: 1rem;
+}
+
+.intro__toggler__button .checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.intro__toggler__button .label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 3.25rem;
+  height: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background: var(--toggle);
+  transition: background 1s ease;
+}
+
+.intro__toggler__button .label:hover {
+  background: var(--hoverToggle);
+}
+
+.intro__toggler__button .label .ball {
+  position: relative;
+  left: 3px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: var(--cardBG);
+  transition: transform 0.2s linear;
+}
+
+.intro__toggler .checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.accounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 2rem;
+}
+
+.accounts .account {
+  border-radius: 5px;
+  background-color: var(--cardBG);
+  padding: 2rem;
+  display: grid;
+  grid-gap: 1rem;
+  justify-items: center;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.accounts .account:before {
+  position: absolute;
+  content: "";
+  height: 0.25rem;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.accounts .account:hover {
+  background-color: var(--hoverText);
+  transform: scale(1.05);
+}
+
+.accounts .account--fb:before {
+  background: #198ff5;
+}
+
+.accounts .account--twitter:before {
+  background: #1ca0f2;
+}
+
+.accounts .account--insta:before {
+  background: linear-gradient(#fdc468, #df4996);
+}
+
+.accounts .account--yt:before {
+  background: #c4032a;
+}
+
+.accounts .account__name {
+  display: flex;
+  align-items: center;
+}
+
+.accounts .account__name span {
+  margin-left: 0.5rem;
+  color: var(--smallText);
+}
+
+.accounts .account__followers {
+  text-align: center;
+}
+
+.accounts .account__followers h2 {
+  font-size: 3.5rem;
+}
+
+.accounts .account__followers p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #63687e;
+}
+
+.accounts .account__analytic {
+  display: flex;
+  align-items: center;
+  color: #1db489;
+}
+
+.accounts .account__analytic img {
+  margin-right: 0.4rem;
+}
+
+.accounts .account__analytic--red {
+  color: #dc414c;
+}
+
+.overview header {
+  margin-bottom: 1rem;
+}
+
+.overview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+
+.overview__card {
+  border-radius: 5px;
+  background-color: var(--cardBG);
+  padding: 2rem;
+  display: grid;
+  justify-content: space-between;
+  grid-gap: 2rem;
+  grid-template-areas: "a   b" "c   d";
+  transition: transform 0.5s linear;
+}
+
+.overview__card:hover {
+  background-color: var(--hoverText);
+  transform: scale(1.05);
+}
+
+.overview__card .a {
+  grid-area: a;
+  color: var(--smallText);
+}
+
+.overview__card .b {
+  grid-area: b;
+  justify-self: right;
+}
+
+.overview__card .c {
+  grid-area: c;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.overview__card .d {
+  grid-area: d;
+  display: flex;
+  align-items: center;
+  color: #1db489;
+}
+
+.overview__card .d--red {
+  color: #dc414c;
+}
+
+.overview__card .d p {
+  margin-left: 0.4rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 700;
+}
+
+footer a {
+  text-decoration: none;
+  color: #502050;
+}
+
+@media (max-width: 500px) {
+  .intro {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+  .intro__heading {
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px dotted #ada5a5;
+    margin-bottom: 1.5rem;
+  }
+  .intro__heading h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .intro__toggler {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .intro__toggler .label {
+    transform: scale(1.2);
+  }
+  .accounts {
+    row-gap: 3rem;
+  }
+  .accounts .account {
+    height: 110%;
+  }
+  .overview header {
+    margin: 5rem 0 2rem;
+    font-size: 1.3rem;
+  }
+  footer {
+    font-size: 80%;
+  }
+}
