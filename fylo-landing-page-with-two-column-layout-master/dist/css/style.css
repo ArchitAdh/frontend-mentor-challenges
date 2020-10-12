@@ -1,0 +1,344 @@
+/*---------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #070439;
+}
+
+.container {
+  max-width: 100%;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  margin: 5rem 0;
+}
+
+form {
+  display: flex;
+  font-size: 14px;
+}
+
+form input {
+  flex: 0.7;
+  margin-right: 1rem;
+  padding: 1rem;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+}
+
+form input::placeholder {
+  color: #bfbfbf;
+}
+
+form button {
+  font-weight: 700;
+  flex: 0.3;
+  background: #3065f8;
+  border: 1px solid #3065f8;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+form button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+.m-y {
+  margin: 1rem 0;
+}
+
+nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+
+nav img {
+  width: 130px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 1rem;
+  margin: 0 0.25rem;
+  color: #070439;
+}
+
+.first .container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rem;
+}
+
+.first .container .first__text {
+  flex: 1;
+  width: 50%;
+  margin-right: 2rem;
+}
+
+.first .container .first__text h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.first .container .img {
+  width: 50%;
+  flex: 1;
+  max-width: 100%;
+}
+
+.second {
+  position: relative;
+  background: #f6f6fe;
+}
+
+.second:before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  background: url("../../images/bg-curve-desktop.svg") no-repeat center center/cover;
+}
+
+.second .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second .container .second__text {
+  flex: 1;
+  width: 50%;
+  margin-right: 2rem;
+}
+
+.second .container .second__text h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.second .container .second__text span a {
+  color: #3da08f;
+}
+
+.second .container .second__text .card {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(191, 191, 191, 0.5);
+  border-radius: 5px;
+  max-width: 365px;
+}
+
+.second .container .second__text .card p {
+  margin: 0;
+}
+
+.second .container .second__text .card .avatar {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.second .container .second__text .card .avatar img {
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.second .container .second__text .card .avatar div > * {
+  margin: 0;
+}
+
+.second .container > .img {
+  flex: 1;
+  width: 50%;
+}
+
+.last {
+  background: #585989;
+  color: #fff;
+}
+
+.last .container {
+  display: flex;
+  align-items: center;
+  padding: 5rem 1rem;
+}
+
+.last .container div {
+  flex: 1;
+  margin-right: 5rem;
+}
+
+.last .container div h2 {
+  font-family: "Raleway", sans-serif;
+}
+
+.last .container form {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.last .container form input {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.last .container form button {
+  width: 50%;
+}
+
+footer {
+  background: #070439;
+  margin-top: -5rem;
+  color: #fff;
+  padding: 5rem 2rem;
+}
+
+footer .flex {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+
+footer .flex > div {
+  flex: 1;
+}
+
+footer .flex ._1 {
+  margin-right: 2rem;
+}
+
+footer .flex ._4 {
+  font-size: 3rem;
+}
+
+footer .flex ._4 img {
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  body {
+    text-align: center;
+  }
+  section {
+    margin: 3rem 0;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+  form {
+    flex-direction: column;
+    justify-content: center;
+  }
+  form input {
+    margin-bottom: 1rem;
+  }
+  form > * {
+    width: 100%;
+  }
+  nav {
+    white-space: nowrap;
+  }
+  .first .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .first .container .first__text {
+    width: 100%;
+    order: 2;
+  }
+  .first .container .img {
+    width: 100%;
+  }
+  .second:before {
+    background: url("../../images/bg-curve-mobile.svg") no-repeat center center/cover;
+  }
+  .second .container {
+    flex-direction: column;
+  }
+  .second .container .second__text {
+    width: 100%;
+    order: 2;
+    margin-right: 0;
+  }
+  .second .container .second__text .card {
+    margin: 3rem auto;
+  }
+  .second .container .img {
+    width: 100%;
+  }
+  .last .container {
+    flex-direction: column;
+    padding: 5rem 1rem;
+    justify-content: center;
+  }
+  .last .container div {
+    margin-right: 0;
+  }
+  .last .container form {
+    width: 70%;
+  }
+  .last .container form input,
+  .last .container form button {
+    width: 100%;
+  }
+  footer {
+    text-align: left;
+  }
+  footer .flex {
+    flex-direction: column;
+  }
+  footer .flex ._4 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  nav img {
+    width: 77px;
+  }
+  nav ul li a {
+    padding: 0.25rem;
+    font-size: 14px;
+  }
+}

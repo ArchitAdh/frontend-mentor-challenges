@@ -1,0 +1,119 @@
+@media (max-width: 768px) {
+  body {
+    text-align: center;
+  }
+
+  section {
+    margin: 3rem 0;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  //form
+  form {
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+
+    input {
+      margin-bottom: 1rem;
+    }
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  //nav
+  nav {
+    white-space: nowrap;
+  }
+
+  //first section
+  .first .container {
+    flex-direction: column;
+    justify-content: center;
+
+    .first__text {
+      width: 100%;
+      order: 2;
+    }
+
+    .img {
+      width: 100%;
+    }
+  }
+
+  //second section
+  .second {
+    &:before {
+      background: url("../../images/bg-curve-mobile.svg") no-repeat center
+        center/cover;
+    }
+    .container {
+      flex-direction: column;
+
+      .second__text {
+        width: 100%;
+        order: 2;
+        margin-right: 0;
+
+        .card {
+          margin: 3rem auto;
+        }
+      }
+
+      .img {
+        width: 100%;
+      }
+    }
+  }
+
+  //last container
+  .last .container {
+    flex-direction: column;
+    padding: 5rem 1rem;
+    justify-content: center;
+
+    div {
+      margin-right: 0;
+    }
+
+    form {
+      width: 70%;
+      input,
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  //footer
+  footer {
+    text-align: left;
+
+    .flex {
+      flex-direction: column;
+
+      ._4 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    img {
+      width: 77px;
+    }
+    ul {
+      li a {
+        padding: 0.25rem;
+        font-size: 14px;
+      }
+    }
+  }
+}
