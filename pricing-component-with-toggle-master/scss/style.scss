@@ -1,0 +1,200 @@
+// Variables
+$gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$VeryLightGrayishBlue: hsl(240, 78%, 98%);
+$LightGrayishBlue: hsl(234, 14%, 74%);
+$GrayishBlue: hsl(233, 13%, 49%);
+$DarkGrayishBlue: hsl(232, 13%, 33%);
+
+// base styles
+* {
+  box-sizing: border-box;
+  //   margin: 0;
+  //   padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../images/bg-top.svg) right top no-repeat,
+    url(../images/bg-bottom.svg) left bottom no-repeat, $VeryLightGrayishBlue;
+}
+
+h1 {
+  color: $DarkGrayishBlue;
+}
+
+.toggle {
+  color: $GrayishBlue;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .toggler {
+    margin: 0 1rem;
+
+    label {
+      display: inline-block;
+      height: 30px;
+      width: 60px;
+      border-radius: 50px;
+      background-image: $gradient;
+      position: relative;
+      transition: background 0.2s ease-out;
+
+      &:hover {
+        // background-image: none;
+        background: hsl(235, 44%, 85%);
+      }
+
+      .ball {
+        height: 25px;
+        width: 25px;
+        background: #fff;
+        position: absolute;
+        border-radius: 50%;
+        top: 2.5px;
+        left: 2.5px;
+        transition: transform 0.4s ease;
+
+        //height and width should be same;
+        //top is calculated as height of label - height of ball, equals remain height; to center it divided by 2
+      }
+    }
+
+    //checkbox hidden
+    input {
+      display: none;
+    }
+
+    //ball movement on toggle
+    input:checked + label .ball {
+      transform: translateX(30px);
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    text-align: center;
+    border-radius: 10px;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    h4 {
+      color: $DarkGrayishBlue;
+    }
+
+    //p is not first child, h4 is, first child wont work
+    //p is first of type in the card
+    P:first-of-type {
+      width: 235px;
+      //giving fixed with so card size doesn't change while toggling
+
+      font-size: 4rem;
+      margin: 0;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .monthly {
+      display: none;
+    }
+
+    p:nth-child(3) {
+      border-top: 1.5px dotted $LightGrayishBlue;
+      border-bottom: 1.5px dotted $LightGrayishBlue;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    p:nth-child(4),
+    p:nth-child(5),
+    p:nth-child(6) {
+      border-bottom: 1.5px dotted $LightGrayishBlue;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    button {
+      margin-top: 1rem;
+      background-image: $gradient;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        background: #fff;
+        color: $DarkGrayishBlue;
+        border: 1px solid $LightGrayishBlue;
+        transform: scale(1.02);
+      }
+    }
+
+    &--professional {
+      background: $gradient;
+      color: #fff;
+      height: 460px;
+      width: 320px;
+
+      h4 {
+        color: #fff;
+      }
+
+      button {
+        color: $DarkGrayishBlue;
+        background-image: none;
+        background-color: #fff;
+
+        &:hover {
+          background: $gradient;
+          color: #fff;
+          border: 1px solid $VeryLightGrayishBlue;
+        }
+      }
+    }
+  }
+}
+
+//js manipulation
+.show-monthly .card .monthly {
+  display: block;
+}
+.show-monthly .card .annually {
+  display: none;
+}
+
+//small devices
+@media (max-width: 930px) {
+  body {
+    background: url(../images/bg-top.svg) right top/150px no-repeat,
+      $VeryLightGrayishBlue;
+  }
+  .cards {
+    flex-direction: column;
+
+    .card {
+      margin-bottom: 1rem;
+
+      &--professional {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

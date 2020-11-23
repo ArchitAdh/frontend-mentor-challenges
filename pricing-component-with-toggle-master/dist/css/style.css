@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../images/bg-top.svg) right top no-repeat, url(../images/bg-bottom.svg) left bottom no-repeat, #f6f6fe;
+}
+
+h1 {
+  color: #494c5f;
+}
+
+.toggle {
+  color: #6d708d;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle .toggler {
+  margin: 0 1rem;
+}
+
+.toggle .toggler label {
+  display: inline-block;
+  height: 30px;
+  width: 60px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+
+.toggle .toggler label:hover {
+  background: #c8cbea;
+}
+
+.toggle .toggler label .ball {
+  height: 25px;
+  width: 25px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+  top: 2.5px;
+  left: 2.5px;
+  transition: transform 0.4s ease;
+}
+
+.toggle .toggler input {
+  display: none;
+}
+
+.toggle .toggler input:checked + label .ball {
+  transform: translateX(30px);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards .card {
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cards .card h4 {
+  color: #494c5f;
+}
+
+.cards .card P:first-of-type {
+  width: 235px;
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.cards .card .monthly {
+  display: none;
+}
+
+.cards .card p:nth-child(3) {
+  border-top: 1.5px dotted #b3b5c6;
+  border-bottom: 1.5px dotted #b3b5c6;
+  padding: 1rem;
+  margin: 0;
+}
+
+.cards .card p:nth-child(4),
+.cards .card p:nth-child(5),
+.cards .card p:nth-child(6) {
+  border-bottom: 1.5px dotted #b3b5c6;
+  padding: 1rem;
+  margin: 0;
+}
+
+.cards .card button {
+  margin-top: 1rem;
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: all 0.2s ease-out;
+}
+
+.cards .card button:hover {
+  background: #fff;
+  color: #494c5f;
+  border: 1px solid #b3b5c6;
+  transform: scale(1.02);
+}
+
+.cards .card--professional {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #fff;
+  height: 460px;
+  width: 320px;
+}
+
+.cards .card--professional h4 {
+  color: #fff;
+}
+
+.cards .card--professional button {
+  color: #494c5f;
+  background-image: none;
+  background-color: #fff;
+}
+
+.cards .card--professional button:hover {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #fff;
+  border: 1px solid #f6f6fe;
+}
+
+.show-monthly .card .monthly {
+  display: block;
+}
+
+.show-monthly .card .annually {
+  display: none;
+}
+
+@media (max-width: 930px) {
+  body {
+    background: url(../images/bg-top.svg) right top/150px no-repeat, #f6f6fe;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .cards .card {
+    margin-bottom: 1rem;
+  }
+  .cards .card--professional {
+    height: 100%;
+    width: 100%;
+  }
+}
