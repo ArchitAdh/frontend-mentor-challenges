@@ -1,0 +1,47 @@
+:root {
+  --bg: #fafafa;
+}
+
+.dark {
+  --bg: #161722;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  background: url(../images/bg-desktop-light.jpg) no-repeat var(--bg);
+}
+
+.container {
+  width: 40vw;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .toggler input[type="checkbox"] {
+  display: none;
+}
+
+header .toggler .label .sun {
+  display: none;
+}
+
+.dark .toggler .label .moon {
+  display: none;
+}
+
+.dark .toggler .label .sun {
+  display: block;
+}
