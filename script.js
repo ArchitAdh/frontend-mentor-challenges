@@ -1,6 +1,6 @@
 const projects = [
   {
-    Name: "article_preview_component",
+    Name: "article-preview-component",
     Difficulty: "Newbie",
     Github:
       "https://github.com/ArchitAdh/frontend-mentor-challenges/tree/master/article_preview_component",
@@ -45,8 +45,8 @@ projects.forEach(({ Name, Difficulty, Github }) => {
   listItem.innerHTML = `
     <a href = "/${Name}/dist">
     <img src = "/${Name}/design/desktop-design.jpg" alt = "${Name}" />
-    <p> ${formatProjectName(Name)} </p>
     </a>
+    <p> ${formatProjectName(Name)} </p>
   `;
   list.appendChild(listItem);
 });
