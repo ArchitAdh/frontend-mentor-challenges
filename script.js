@@ -45,8 +45,9 @@ projects.forEach(({ Name, Difficulty, Github }) => {
   listItem.innerHTML = `
     <a href = "/${Name}/dist">
     <img src = "/${Name}/design/desktop-design.jpg" alt = "${Name}" />
-    </a>
     <p> ${formatProjectName(Name)} </p>
+    </a>
+    
   `;
   list.appendChild(listItem);
 });
