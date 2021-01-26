@@ -13,6 +13,8 @@ $LightGrayishBlueHover: hsl(236, 33%, 92%);
 $DarkGrayishBlue: hsl(234, 11%, 52%);
 $VeryDarkGrayishBlue: hsl(233, 14%, 35%);
 $VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+//gradient
+$circle-bg: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))
 
 :root {
   //light colors
@@ -24,10 +26,26 @@ $VeryDarkGrayishBlue: hsl(237, 14%, 26%);
   --bg: #{$VeryDarkBlue};
 }
 
+//mixin
+@mixin circle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid $LightGrayishBlue;
+  border-radius: 50%;
+  transition: 0.5s ease;
+ 
+ 
+}
+
 //General styles
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,16 +55,22 @@ body {
 }
 
 .container {
-  width: 40vw;
-  max-width: 100%;
+  max-width: 512px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 header {
-  margin-top: 4rem;
+  margin: 4rem auto 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  h1 {
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 10px;
+  }
 
   //toggler
   .toggler {
@@ -68,4 +92,117 @@ header {
 }
 .dark .toggler .label .sun {
   display: block;
+}
+
+.tasks {
+  .input-field {
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    input[type="text"] {
+      width: 100%;
+      padding: 19px;
+      padding-left: 3.5rem;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      display: none;
+    }
+
+    &::before {
+      @include circle;
+      top: 13px;
+    }
+
+    &.checked::before{
+      background-image: $circle-bg;
+    }
+
+    &:hover::before {
+      border-color: red;
+    }
+  }
+
+  .task-list {
+    border: 1px solid $LightGrayishBlue;
+    border-bottom: 1px solid $LightGrayishBlue;
+    border-radius: 5px;
+    box-shadow: 10px 2px 10px hsla(0, 0, 0, 0.1);
+
+    .contents {
+      list-style-type: none;
+      background: #fff;
+
+      li {
+        border: none;
+        width: 100%;
+        padding: 19px;
+        border-bottom: 1px solid $LightGrayishBlue;
+        position: relative;
+        padding-left: 3.5rem;
+
+        // add circle
+        &::before {
+          @include circle;
+        }
+        //border color when hovered
+        &:hover::before {
+          border-image: $circle-bg 1 ;
+        }
+
+        //tick
+        //checked class
+        &.checked {
+            text-decoration: line-through;
+            color: $LightGrayishBlue;
+          &::after {
+            content: "";
+            position: absolute;
+            border-color:#fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 21px;
+            left: 24px;
+            transform: rotate(45deg);
+            height: 8px;
+            width: 3px;
+          }
+
+          //when in checked state the before element(circle) gets the style
+          &::before{
+            background-image: $circle-bg;
+          }
+        }
+        
+      }
+    }
+  }
+
+  .info {
+    border-bottom: 2px solid $VeryLightGray;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 1rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    .filter {
+      a + a {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
 }

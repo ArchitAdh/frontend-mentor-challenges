@@ -24,8 +24,8 @@
     <!-- style  -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="">
-    <div class="container">
+  <body>
+    <div class="container ">
       <header>
         <h1>Todo</h1>
         <div class="toggler">
@@ -37,10 +37,39 @@
           </label>
         </div>
       </header>
-    </div>
 
-    <!-- Add dynamic number
-    items left All Active Completed Clear Completed Drag and drop to reorder
-    list -->
+      <div class="tasks">
+          <div class="input-field">
+            <span class="circle"></span>
+            <input
+              type="text"
+              name="todo"
+              id="todo"
+              placeholder="Create a new todo.."
+            />
+            <input type="submit" />
+          </div>
+        <div class="task-list">
+          <ul class="contents">
+            <li>go to walk</li>
+            <li class="checked" >Complete by tomorrow</li>
+            <li>wake up early</li>
+            <li>complete todo fontendMentor</li>
+          </ul>
+          <div class="info">
+            <span id="left">5 items left</span>
+
+            <div class="filter">
+              <a href="#" id="all">All</a>
+              <a href="#" id="active">Active</a>
+              <a href="#" id="completed">Completed</a>
+            </div>
+
+            <a href="#" id="clear">Clear Completed</a>
+          
+          </div>
+      </div>
+      <footer>Drag and drop to reorder list</footer>
+    </div>
   </body>
 </html>
