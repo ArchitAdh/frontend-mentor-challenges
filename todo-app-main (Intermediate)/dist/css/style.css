@@ -58,7 +58,29 @@ header .toggler .label .sun {
   position: relative;
 }
 
+.tasks .input-field .circle-wrap {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: linear-gradient(to right, #57ddff, #c058f3);
+  border-radius: 50%;
+  top: 39px;
+  left: 15px;
+}
+
+.tasks .input-field .circle-wrap .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0px 0px -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--bg);
+  border-radius: 50%;
+}
+
 .tasks .input-field input[type="text"] {
+  z-index: -2;
   width: 100%;
   padding: 19px;
   padding-left: 3.5rem;
@@ -69,27 +91,6 @@ header .toggler .label .sun {
 
 .tasks .input-field input[type="submit"] {
   display: none;
-}
-
-.tasks .input-field::before {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  content: "";
-  width: 20px;
-  height: 20px;
-  border: 1px solid #cacde8;
-  border-radius: 50%;
-  transition: 0.5s ease;
-  top: 13px;
-}
-
-.tasks .input-field.checked::before {
-  background-image: linear-gradient(#57ddff, #c058f3);
-}
-
-.tasks .input-field:hover::before {
-  border-color: red;
 }
 
 .tasks .task-list {
@@ -126,7 +127,7 @@ header .toggler .label .sun {
 }
 
 .tasks .task-list .contents li:hover::before {
-  border-image: linear-gradient(#57ddff, #c058f3) 1;
+  border-image: linear-gradient(to right, #57ddff, #c058f3) 1;
 }
 
 .tasks .task-list .contents li.checked {
@@ -148,10 +149,18 @@ header .toggler .label .sun {
 }
 
 .tasks .task-list .contents li.checked::before {
-  background-image: linear-gradient(#57ddff, #c058f3);
+  background-image: linear-gradient(to right, #57ddff, #c058f3);
 }
 
-.tasks .info {
+.tasks .task-list .contents li .delete-item {
+  float: right;
+  text-decoration: none;
+  color: #444;
+  font-size: 1.5rem;
+  vertical-align: 10px;
+}
+
+.tasks .task-list .info {
   border-bottom: 2px solid #fafafa;
   border-radius: 5px;
   font-size: 1rem;
@@ -161,11 +170,11 @@ header .toggler .label .sun {
   padding: 1rem;
 }
 
-.tasks .info a {
+.tasks .task-list .info a {
   text-decoration: none;
 }
 
-.tasks .info .filter a + a {
+.tasks .task-list .info .filter a + a {
   margin-left: 1rem;
 }
 

@@ -14,7 +14,7 @@ $DarkGrayishBlue: hsl(234, 11%, 52%);
 $VeryDarkGrayishBlue: hsl(233, 14%, 35%);
 $VeryDarkGrayishBlue: hsl(237, 14%, 26%);
 //gradient
-$circle-bg: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))
+$circle-bg: linear-gradient(to right, hsl(192, 100%, 67%) , hsl(280, 87%, 65%))
 
 :root {
   //light colors
@@ -39,6 +39,10 @@ $circle-bg: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))
   transition: 0.5s ease;
  
  
+}
+
+@mixin pos{
+  top: 0; right: 0; bottom: 0; left: 0;
 }
 
 //General styles
@@ -98,8 +102,39 @@ header {
   .input-field {
     margin-bottom: 1.5rem;
     position: relative;
+   
+    .circle-wrap{
+      width: 24px;
+      height: 24px;
+      position: relative;
+      background: $circle-bg;
+      border-radius: 50%;
+      top: 39px;
+      left: 15px;
+
+
+      .circle{
+        position: absolute;
+
+      // Put top edge and left edge in the center
+        top: 50%;
+        left: 50%;
+
+        // Offset the position correctly with
+        // minus half of the width and minus half of the height 
+        margin: -10px 0px 0px -10px;
+
+        width: 20px;
+        height: 20px;
+        background: var(--bg);
+        border-radius: 50%;
+        
+       
+      }
+    }
 
     input[type="text"] {
+      z-index: -2;
       width: 100%;
       padding: 19px;
       padding-left: 3.5rem;
@@ -112,18 +147,18 @@ header {
       display: none;
     }
 
-    &::before {
-      @include circle;
-      top: 13px;
-    }
+    // &::before {
+    //   @include circle;
+    //   top: 13px;
+    // }
 
-    &.checked::before{
-      background-image: $circle-bg;
-    }
+    // &.checked::before{
+    //   background-image: $circle-bg;
+    // }
 
-    &:hover::before {
-      border-color: red;
-    }
+    // &:hover::before {
+    //   border-color: red;
+    // }
   }
 
   .task-list {
@@ -177,6 +212,13 @@ header {
           }
         }
         
+        .delete-item{
+          float: right;
+          text-decoration: none;
+          color: #444;
+           font-size: 1.5rem;
+          vertical-align: 10px;
+
       }
     }
   }
@@ -200,6 +242,7 @@ header {
       }
     }
   }
+}
 }
 
 footer {

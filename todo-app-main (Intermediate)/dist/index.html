@@ -24,7 +24,7 @@
     <!-- style  -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body >
     <div class="container ">
       <header>
         <h1>Todo</h1>
@@ -39,8 +39,8 @@
       </header>
 
       <div class="tasks">
-          <div class="input-field">
-            <span class="circle"></span>
+          <form class="input-field">
+           <div class="circle-wrap"><div class="circle checked"></div></div> 
             <input
               type="text"
               name="todo"
@@ -48,10 +48,11 @@
               placeholder="Create a new todo.."
             />
             <input type="submit" />
-          </div>
+          </form>
+
         <div class="task-list">
           <ul class="contents">
-            <li>go to walk</li>
+            <li class="item">go to walk <a href="#" class="delete-item">&#10005</a></li>
             <li class="checked" >Complete by tomorrow</li>
             <li>wake up early</li>
             <li>complete todo fontendMentor</li>
@@ -71,5 +72,6 @@
       </div>
       <footer>Drag and drop to reorder list</footer>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
