@@ -14,9 +14,9 @@ form.addEventListener("submit", addTask);
 //Add task
 function addTask(e) {
   console.log(todoInput.value);
-console.log('dipti');
+  console.log("dipti");
   // if(todoInput.value !=== ''){
-
+  //random comment
   // }
   //random comment
   e.preventDefault();
